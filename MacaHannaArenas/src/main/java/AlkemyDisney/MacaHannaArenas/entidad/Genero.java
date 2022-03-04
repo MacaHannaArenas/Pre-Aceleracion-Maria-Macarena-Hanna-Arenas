@@ -27,7 +27,7 @@ import org.hibernate.annotations.Where;
 @AllArgsConstructor
 @ToString
 
-@SQLDelete(sql = "UPDATE generos SET baja = true WHERE generoId=?")
+@SQLDelete(sql = "UPDATE generos SET baja = true WHERE genero_id=?")
 
 @Where(clause = "baja = false")
 

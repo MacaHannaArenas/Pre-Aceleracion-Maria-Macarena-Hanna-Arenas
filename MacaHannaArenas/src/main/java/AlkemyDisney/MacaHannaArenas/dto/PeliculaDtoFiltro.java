@@ -8,8 +8,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class PeliculaDtoFiltro {
 
     
@@ -28,7 +26,7 @@ public class PeliculaDtoFiltro {
         return orden.compareToIgnoreCase("DESC") == 0;
     }
 
-    public PeliculaDtoFiltro(String imagen, String titulo, List<String> generos, String orden) {
+    public PeliculaDtoFiltro( String titulo, List<String> generos, String orden) {
      
         this.titulo = titulo;
 

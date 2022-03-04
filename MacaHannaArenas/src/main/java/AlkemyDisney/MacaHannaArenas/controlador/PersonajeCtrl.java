@@ -1,9 +1,7 @@
 package AlkemyDisney.MacaHannaArenas.controlador;
 
 
-import AlkemyDisney.MacaHannaArenas.dto.PeliculaDTO;
 import AlkemyDisney.MacaHannaArenas.dto.PersonajeDTO;
-import AlkemyDisney.MacaHannaArenas.dto.PersonajeDtoBasico;
 import AlkemyDisney.MacaHannaArenas.servicio.PersonajeSvs;
 import java.util.List;
 
@@ -37,27 +35,27 @@ public class PersonajeCtrl {
         PersonajeDTO personajeDto = perServ.personajePorId(personajeId);
         return ResponseEntity.ok(personajeDto);
     }
-
+/*
      @GetMapping
     public ResponseEntity<List<PersonajeDtoBasico>> getAllGenres() {
         List<PersonajeDtoBasico> genreList = perServ.personajeBasico();
         return ResponseEntity.ok().body(genreList);
     }
-    
-    /*
+    */
+   
     @GetMapping
     public ResponseEntity<List<PersonajeDTO>> personajesPorFiltro(
 
             @RequestParam(required = false) String nombre,
-            @RequestParam(required = false) String imagen,
+      
             @RequestParam(required = false) Integer edad,
-            @RequestParam(required = false) Double peso,
-            @RequestParam(required = false) String biografia,
-            @RequestParam(required = false) List<PeliculaDTO> peliculas,
+   
+
+            @RequestParam(required = false) List<String> peliculas,
             @RequestParam(required = false, defaultValue = "ASC") String orden) {
-        List<PersonajeDTO> ListaPersonajesDto = perServ.personajeFiltro(nombre, imagen, edad, peso, biografia, peliculas, orden);
+        List<PersonajeDTO> ListaPersonajesDto = perServ.personajeFiltro(nombre, edad, peliculas, orden);
         return ResponseEntity.ok(ListaPersonajesDto);
-    }*/
+    }
 
     @PostMapping
     public ResponseEntity<PersonajeDTO> guardarPersonaje(@RequestBody PersonajeDTO personajeDto) {

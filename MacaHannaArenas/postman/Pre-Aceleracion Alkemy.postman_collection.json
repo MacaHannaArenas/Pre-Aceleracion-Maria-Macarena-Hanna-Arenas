@@ -21,7 +21,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/peliculas/842120e9-7d4b-443a-8ca1-c419039548fa",
+					"raw": "http://localhost:8080/peliculas/1171d944-8e82-4e10-b9ee-972a5c7a4f76",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -29,7 +29,7 @@
 					"port": "8080",
 					"path": [
 						"peliculas",
-						"842120e9-7d4b-443a-8ca1-c419039548fa"
+						"1171d944-8e82-4e10-b9ee-972a5c7a4f76"
 					]
 				}
 			},
@@ -94,6 +94,98 @@
 						}
 					],
 					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Genero Borrar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXBlQGhvdG1haWwuY29tIiwiZXhwIjoxNjQ2NDM4Mzk4LCJpYXQiOjE2NDY0MDIzOTh9.0UXh8NWeEnY2B8I3ZSdofIpqatMWW8UyqpwbpxV1rm4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/peliculas/1171d944-8e82-4e10-b9ee-972a5c7a4f76",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"peliculas",
+						"1171d944-8e82-4e10-b9ee-972a5c7a4f76"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Pelicula Borrar Copy",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/generos/f0ed6c19-0193-4eed-8c42-b3f3143e96c3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"generos",
+								"f0ed6c19-0193-4eed-8c42-b3f3143e96c3"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Mar 2022 20:23:25 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
 					"body": ""
 				}
 			]
@@ -106,7 +198,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWNhaGFubmFAaG90bWFpbC5jb20iLCJleHAiOjE2NDYzNzUzNzUsImlhdCI6MTY0NjMzOTM3NX0.dUYHYKwDw5Sv0CuhDVI5Wq7rwKvORc9y8ln5WjBsXO4",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWNhaGFubmFAaG90bWFpbC5jb20iLCJleHAiOjE2NDY0NjAxMzksImlhdCI6MTY0NjQyNDEzOX0.ZVGTtLUUWurhqbNUNAThVDNAxgmcOSlArWayHkU8HWk",
 							"type": "string"
 						}
 					]
@@ -122,6 +214,28 @@
 					"port": "8080",
 					"path": [
 						"personajes"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "Merlin",
+							"disabled": true
+						},
+						{
+							"key": "edad",
+							"value": "50",
+							"disabled": true
+						},
+						{
+							"key": "peliculas",
+							"value": "872645ae-6ca8-4c49-9c39-7a8a7610b56f",
+							"disabled": true
+						},
+						{
+							"key": "orden",
+							"value": "DESC",
+							"disabled": true
+						}
 					]
 				}
 			},
@@ -194,6 +308,367 @@
 					],
 					"cookie": [],
 					"body": "[\n    {\n        \"personajeId\": \"2fd96067-2b96-4f88-b8c9-c8c9aae3e84b\",\n        \"nombre\": \"Mufasa\",\n        \"imagen\": \"/MufasaReyLeon.jpg\"\n    },\n    {\n        \"personajeId\": \"9e3586f5-a158-410b-87dd-484eb7bb47c8\",\n        \"nombre\": \"Nala\",\n        \"imagen\": \"/nalaReyLeon.jpg\"\n    },\n    {\n        \"personajeId\": \"a8eb4c2f-2a52-45d6-9080-b7d606934cd1\",\n        \"nombre\": \"Ariel\",\n        \"imagen\": \"/Ariel.jpg\"\n    },\n    {\n        \"personajeId\": \"bca2d81b-89de-4064-b89c-38d010ca536b\",\n        \"nombre\": \"Simba\",\n        \"imagen\": \"/SimbaReyLeon.jpg\"\n    },\n    {\n        \"personajeId\": \"d6295f53-1ddb-4ddc-86e3-7543c0063629\",\n        \"nombre\": \"Simba\",\n        \"imagen\": \"/SimbaReyLeon.jpg\"\n    }\n]"
+				},
+				{
+					"name": "Personaje Buscar",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/personajes?edad=50",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personajes"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Merlin",
+									"disabled": true
+								},
+								{
+									"key": "edad",
+									"value": "50"
+								},
+								{
+									"key": "peliculas",
+									"value": "872645ae-6ca8-4c49-9c39-7a8a7610b56f",
+									"disabled": true
+								},
+								{
+									"key": "orden",
+									"value": "DESC",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Mar 2022 20:07:52 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"personajeId\": \"6198223f-0101-4856-be21-6c42f12dd246\",\n        \"nombre\": \"Merlin\",\n        \"imagen\": \"/merlin.jpg\",\n        \"edad\": 50,\n        \"peso\": 5,\n        \"biografia\": \"Padre de Nemo\",\n        \"peliculas\": [\n            {\n                \"peliculaId\": \"872645ae-6ca8-4c49-9c39-7a8a7610b56f\",\n                \"imagen\": \"/Nemo.jpg\",\n                \"titulo\": \"Buscando a Nemo\",\n                \"lanzamiento\": \"1995/07/07\",\n                \"valoracion\": 4,\n                \"personajes\": null,\n                \"generos\": null\n            }\n        ]\n    }\n]"
+				},
+				{
+					"name": "Personaje Buscar",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/personajes?peliculas=872645ae-6ca8-4c49-9c39-7a8a7610b56f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personajes"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Merlin",
+									"disabled": true
+								},
+								{
+									"key": "edad",
+									"value": "50",
+									"disabled": true
+								},
+								{
+									"key": "peliculas",
+									"value": "872645ae-6ca8-4c49-9c39-7a8a7610b56f"
+								},
+								{
+									"key": "orden",
+									"value": "DESC",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Mar 2022 20:09:14 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"personajeId\": \"6198223f-0101-4856-be21-6c42f12dd246\",\n        \"nombre\": \"Merlin\",\n        \"imagen\": \"/merlin.jpg\",\n        \"edad\": 50,\n        \"peso\": 5,\n        \"biografia\": \"Padre de Nemo\",\n        \"peliculas\": [\n            {\n                \"peliculaId\": \"872645ae-6ca8-4c49-9c39-7a8a7610b56f\",\n                \"imagen\": \"/Nemo.jpg\",\n                \"titulo\": \"Buscando a Nemo\",\n                \"lanzamiento\": \"1995/07/07\",\n                \"valoracion\": 4,\n                \"personajes\": null,\n                \"generos\": null\n            }\n        ]\n    }\n]"
+				},
+				{
+					"name": "Personaje Buscar",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/personajes?nombre=Merlin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personajes"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Merlin"
+								},
+								{
+									"key": "edad",
+									"value": "50",
+									"disabled": true
+								},
+								{
+									"key": "peliculas",
+									"value": "872645ae-6ca8-4c49-9c39-7a8a7610b56f",
+									"disabled": true
+								},
+								{
+									"key": "orden",
+									"value": "DESC",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Mar 2022 20:09:28 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"personajeId\": \"6198223f-0101-4856-be21-6c42f12dd246\",\n        \"nombre\": \"Merlin\",\n        \"imagen\": \"/merlin.jpg\",\n        \"edad\": 50,\n        \"peso\": 5,\n        \"biografia\": \"Padre de Nemo\",\n        \"peliculas\": [\n            {\n                \"peliculaId\": \"872645ae-6ca8-4c49-9c39-7a8a7610b56f\",\n                \"imagen\": \"/Nemo.jpg\",\n                \"titulo\": \"Buscando a Nemo\",\n                \"lanzamiento\": \"1995/07/07\",\n                \"valoracion\": 4,\n                \"personajes\": null,\n                \"generos\": null\n            }\n        ]\n    }\n]"
+				},
+				{
+					"name": "Personaje Buscar",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/personajes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personajes"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Merlin",
+									"disabled": true
+								},
+								{
+									"key": "edad",
+									"value": "50",
+									"disabled": true
+								},
+								{
+									"key": "peliculas",
+									"value": "872645ae-6ca8-4c49-9c39-7a8a7610b56f",
+									"disabled": true
+								},
+								{
+									"key": "orden",
+									"value": "DESC",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Mar 2022 20:09:36 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"personajeId\": \"a7129362-1a90-4a67-a648-9e5cf15661d5\",\n        \"nombre\": \"Ariel\",\n        \"imagen\": \"/Ariel.jpg\",\n        \"edad\": 30,\n        \"peso\": 50,\n        \"biografia\": \"Proagonista\",\n        \"peliculas\": []\n    },\n    {\n        \"personajeId\": \"6198223f-0101-4856-be21-6c42f12dd246\",\n        \"nombre\": \"Merlin\",\n        \"imagen\": \"/merlin.jpg\",\n        \"edad\": 50,\n        \"peso\": 5,\n        \"biografia\": \"Padre de Nemo\",\n        \"peliculas\": [\n            {\n                \"peliculaId\": \"872645ae-6ca8-4c49-9c39-7a8a7610b56f\",\n                \"imagen\": \"/Nemo.jpg\",\n                \"titulo\": \"Buscando a Nemo\",\n                \"lanzamiento\": \"1995/07/07\",\n                \"valoracion\": 4,\n                \"personajes\": null,\n                \"generos\": null\n            }\n        ]\n    },\n    {\n        \"personajeId\": \"2cd4f909-fe58-458e-8067-d9f29d797278\",\n        \"nombre\": \"Simba\",\n        \"imagen\": \"/Simba.jpg\",\n        \"edad\": 30,\n        \"peso\": 50,\n        \"biografia\": \"Proagonista\",\n        \"peliculas\": []\n    },\n    {\n        \"personajeId\": \"6e927893-7a31-494d-abea-2369df8c2609\",\n        \"nombre\": \"Simba\",\n        \"imagen\": \"/Simba.jpg\",\n        \"edad\": 30,\n        \"peso\": 50,\n        \"biografia\": \"Proagonista\",\n        \"peliculas\": []\n    },\n    {\n        \"personajeId\": \"da22b206-b68b-4a1d-98c5-c95e113513ee\",\n        \"nombre\": \"Simba\",\n        \"imagen\": \"/Simba.jpg\",\n        \"edad\": 30,\n        \"peso\": 50,\n        \"biografia\": \"Proagonista\",\n        \"peliculas\": []\n    }\n]"
 				}
 			]
 		},
@@ -205,7 +680,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXBlQGhvdG1haWwuY29tIiwiZXhwIjoxNjQ2NDM4Mzk4LCJpYXQiOjE2NDY0MDIzOTh9.0UXh8NWeEnY2B8I3ZSdofIpqatMWW8UyqpwbpxV1rm4",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWNhaGFubmFAaG90bWFpbC5jb20iLCJleHAiOjE2NDYzNzUzNzUsImlhdCI6MTY0NjMzOTM3NX0.dUYHYKwDw5Sv0CuhDVI5Wq7rwKvORc9y8ln5WjBsXO4",
 							"type": "string"
 						}
 					]
@@ -213,7 +688,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/personajes/6e927893-7a31-494d-abea-2369df8c2609",
+					"raw": "http://localhost:8080/personajes/2fd96067-2b96-4f88-b8c9-c8c9aae3e84b",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -221,7 +696,7 @@
 					"port": "8080",
 					"path": [
 						"personajes",
-						"6e927893-7a31-494d-abea-2369df8c2609"
+						"2fd96067-2b96-4f88-b8c9-c8c9aae3e84b"
 					]
 				}
 			},
@@ -516,7 +991,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXBlQGhvdG1haWwuY29tIiwiZXhwIjoxNjQ2NDM4Mzk4LCJpYXQiOjE2NDY0MDIzOTh9.0UXh8NWeEnY2B8I3ZSdofIpqatMWW8UyqpwbpxV1rm4",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWNhaGFubmFAaG90bWFpbC5jb20iLCJleHAiOjE2NDYzNzUzNzUsImlhdCI6MTY0NjMzOTM3NX0.dUYHYKwDw5Sv0CuhDVI5Wq7rwKvORc9y8ln5WjBsXO4",
 							"type": "string"
 						}
 					]
@@ -753,7 +1228,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXBlQGhvdG1haWwuY29tIiwiZXhwIjoxNjQ2NDM4Mzk4LCJpYXQiOjE2NDY0MDIzOTh9.0UXh8NWeEnY2B8I3ZSdofIpqatMWW8UyqpwbpxV1rm4",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWNhaGFubmFAaG90bWFpbC5jb20iLCJleHAiOjE2NDYzNzUzNzUsImlhdCI6MTY0NjMzOTM3NX0.dUYHYKwDw5Sv0CuhDVI5Wq7rwKvORc9y8ln5WjBsXO4",
 							"type": "string"
 						}
 					]
@@ -769,23 +1244,6 @@
 					"port": "8080",
 					"path": [
 						"peliculas"
-					],
-					"query": [
-						{
-							"key": "titulo",
-							"value": "La Sirenita",
-							"disabled": true
-						},
-						{
-							"key": "generos",
-							"value": "52cc5140-effe-4ddc-9e54-18acd4f7dd42",
-							"disabled": true
-						},
-						{
-							"key": "orden",
-							"value": "DESC",
-							"disabled": true
-						}
 					]
 				}
 			},
@@ -1574,7 +2032,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXBlQGhvdG1haWwuY29tIiwiZXhwIjoxNjQ2NDM4Mzk4LCJpYXQiOjE2NDY0MDIzOTh9.0UXh8NWeEnY2B8I3ZSdofIpqatMWW8UyqpwbpxV1rm4",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWNhaGFubmFAaG90bWFpbC5jb20iLCJleHAiOjE2NDYzNzUzNzUsImlhdCI6MTY0NjMzOTM3NX0.dUYHYKwDw5Sv0CuhDVI5Wq7rwKvORc9y8ln5WjBsXO4",
 							"type": "string"
 						}
 					]
@@ -1582,7 +2040,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/peliculas/1171d944-8e82-4e10-b9ee-972a5c7a4f76",
+					"raw": "http://localhost:8080/peliculas/47235c1e-ea57-4408-afba-ddc40256134d",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -1590,7 +2048,7 @@
 					"port": "8080",
 					"path": [
 						"peliculas",
-						"1171d944-8e82-4e10-b9ee-972a5c7a4f76"
+						"47235c1e-ea57-4408-afba-ddc40256134d"
 					]
 				}
 			},
@@ -2228,7 +2686,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXBlQGhvdG1haWwuY29tIiwiZXhwIjoxNjQ2NDQ4MTgyLCJpYXQiOjE2NDY0MTIxODJ9.PZWb6KclG-9qu_0P87O4e66nPztQc7zEfn_PTQk2Uc8",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWNhaGFubmFAaG90bWFpbC5jb20iLCJleHAiOjE2NDY0NjAxMzksImlhdCI6MTY0NjQyNDEzOX0.ZVGTtLUUWurhqbNUNAThVDNAxgmcOSlArWayHkU8HWk",
 							"type": "string"
 						}
 					]
@@ -2237,7 +2695,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"titulo\" : \"ReyLeon\",\r\n    \"imagen\" : \"/ReyLeon.jpg\",\r\n    \"lanzamiento\" : \"1995/07/07\",\r\n    \"valoracion\" : 5,\r\n     \"personajes\":   [\r\n                    {\r\n                       \"nombre\" : \"Simba\",\r\n    \"imagen\" : \"/Simba.jpg\",\r\n    \"edad\" : \"30\",\r\n    \"peso\" : \"50\",\r\n    \"biografia\" : \"Proagonista\"\r\n                    }\r\n                    ],\r\n    \"generos\":   [\r\n                {\r\n                    \"nombre\": \"Fantasia\",\r\n                    \"imagen\": \"/fantasia.png\"\r\n                }\r\n                ]\r\n}\r\n",
+					"raw": "{\r\n    \"titulo\" : \"Buscando a Nemo\",\r\n    \"imagen\" : \"/Nemo.jpg\",\r\n    \"lanzamiento\" : \"1995/07/07\",\r\n    \"valoracion\" : 4,\r\n     \"personajes\":   [\r\n                    {\r\n                       \"nombre\" : \"Merlin\",\r\n    \"imagen\" : \"/merlin.jpg\",\r\n    \"edad\" : \"50\",\r\n    \"peso\" : \"5\",\r\n    \"biografia\" : \"Padre de Nemo\"\r\n                    }\r\n                    ],\r\n    \"generos\":   [\r\n                {\r\n                    \"nombre\": \"Fantasia\",\r\n                    \"imagen\": \"/fantasia.png\"\r\n                }\r\n                ]\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -2412,6 +2870,84 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"peliculaId\": \"5b0db327-a7c5-41c8-89c6-4f3c5ec47b0a\",\n    \"imagen\": \"/ReyLeon.jpg\",\n    \"titulo\": \"ReyLeon\",\n    \"lanzamiento\": \"1995/07/07\",\n    \"valoracion\": 5,\n    \"personajes\": null,\n    \"generos\": null\n}"
+				},
+				{
+					"name": "Pelicula Guardar",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\" : \"Buscando a Nemo\",\r\n    \"imagen\" : \"/Nemo.jpg\",\r\n    \"lanzamiento\" : \"1995/07/07\",\r\n    \"valoracion\" : 4,\r\n     \"personajes\":   [\r\n                    {\r\n                       \"nombre\" : \"Merlin\",\r\n    \"imagen\" : \"/merlin.jpg\",\r\n    \"edad\" : \"50\",\r\n    \"peso\" : \"5\",\r\n    \"biografia\" : \"Padre de Nemo\"\r\n                    }\r\n                    ],\r\n    \"generos\":   [\r\n                {\r\n                    \"nombre\": \"Fantasia\",\r\n                    \"imagen\": \"/fantasia.png\"\r\n                }\r\n                ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/peliculas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"peliculas"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Mar 2022 20:06:56 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"peliculaId\": \"872645ae-6ca8-4c49-9c39-7a8a7610b56f\",\n    \"imagen\": \"/Nemo.jpg\",\n    \"titulo\": \"Buscando a Nemo\",\n    \"lanzamiento\": \"1995/07/07\",\n    \"valoracion\": 4,\n    \"personajes\": null,\n    \"generos\": null\n}"
 				}
 			]
 		},
@@ -2539,7 +3075,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\" : \"pepe@hotmail.com\",\r\n    \"password\" : \"encriptacion\"\r\n}",
+					"raw": "{\r\n    \"username\" : \"macahanna@hotmail.com\",\r\n    \"password\" : \"encriptacion\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -2717,6 +3253,85 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"jwt\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXBlQGhvdG1haWwuY29tIiwiZXhwIjoxNjQ2NDM4Mzk4LCJpYXQiOjE2NDY0MDIzOTh9.0UXh8NWeEnY2B8I3ZSdofIpqatMWW8UyqpwbpxV1rm4\"\n}"
+				},
+				{
+					"name": "Usuario Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"macahanna@hotmail.com\",\r\n    \"password\" : \"encriptacion\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Mar 2022 20:02:20 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"jwt\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWNhaGFubmFAaG90bWFpbC5jb20iLCJleHAiOjE2NDY0NjAxMzksImlhdCI6MTY0NjQyNDEzOX0.ZVGTtLUUWurhqbNUNAThVDNAxgmcOSlArWayHkU8HWk\"\n}"
 				}
 			]
 		},
@@ -2730,7 +3345,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\" : \"pepe@hotmail.com\",\r\n    \"password\" : \"encriptacion\"\r\n}",
+					"raw": "{\r\n    \"username\" : \"macahanna@hotmail.com\",\r\n    \"password\" : \"encriptacion\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -3050,6 +3665,81 @@
 					],
 					"cookie": [],
 					"body": null
+				},
+				{
+					"name": "Usuario Registro",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"macahanna@hotmail.com\",\r\n    \"password\" : \"encriptacion\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Mar 2022 20:02:08 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": ""
 				}
 			]
 		}

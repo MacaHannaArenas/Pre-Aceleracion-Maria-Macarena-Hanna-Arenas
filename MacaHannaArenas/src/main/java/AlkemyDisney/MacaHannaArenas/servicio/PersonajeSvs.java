@@ -1,8 +1,5 @@
 package AlkemyDisney.MacaHannaArenas.servicio;
 
-
-
-
 import AlkemyDisney.MacaHannaArenas.dto.PeliculaDTO;
 import AlkemyDisney.MacaHannaArenas.dto.PersonajeDTO;
 import AlkemyDisney.MacaHannaArenas.dto.PersonajeDtoBasico;
@@ -23,7 +20,7 @@ public interface PersonajeSvs {
 
     List<PersonajeDTO> personajeCompleto();
 
-    List<PersonajeDTO> personajeFiltro(String nombre, String imagen, Integer edad, Double peso, String biografia, List<PeliculaDTO>peliculas, String orden);
+    List<PersonajeDTO> personajeFiltro(String nombre, Integer edad, List<String> peliculas, String orden);
 
     PersonajeDTO personajePorId(String personajeId);
 

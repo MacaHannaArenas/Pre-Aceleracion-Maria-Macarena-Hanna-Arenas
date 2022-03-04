@@ -74,12 +74,14 @@ public class GeneroSvsImp implements GeneroSvs {
     @Override
     public void borrarGeneroId(String generoId) {
 
+
         if (genRepo.existsById(generoId)) {
             genRepo.deleteById(generoId);
         } else {
             throw new GeneroExc(MsjeExc.GENERO_NO_ENCONTRADO);
         }
     }
+
 
     @Override
     public List<GeneroDTO> generoCompleto() {
