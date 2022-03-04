@@ -15,10 +15,7 @@ import AlkemyDisney.MacaHannaArenas.validaciones.dtoVal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,12 +79,7 @@ public class PeliculaMap {
         }
         return peliculaDtoList;
     }
-    /*
-    public List<PeliculaDTO> pelListEnt2ListDTO(Collection<Pelicula> entidadSet, boolean pelCarga) {
-         return entidadSet.stream().map(pelicula -> pelEnt2DTO(pelicula, pelCarga)).collect(Collectors.toList());
 
-    }
-*/    
 
 
     public List<Pelicula> pelListDTO2ListEnt(List<PeliculaDTO> peliculaDtoList, boolean cargaPersonaje) {
@@ -99,10 +91,7 @@ public class PeliculaMap {
         }
         return movieEntitiesList;
     }
-    /*
-public Set<Pelicula> pelListDTO2ListEnt(List<PeliculaDTO> peliculaDtoList, boolean cargaPersonaje) {
-        return peliculaDtoList.stream().map(peliculaDto->pelDTO2Ent(peliculaDto, cargaPersonaje)).collect(Collectors.toSet());
-  }*/
+   
 
     public List<PeliculaDtoBasico> pelListEntBasc2ListDtoBas(List<Pelicula> entities) {
 
@@ -137,17 +126,12 @@ public Set<Pelicula> pelListDTO2ListEnt(List<PeliculaDTO> peliculaDtoList, boole
 
         peliculaEnt.setImagen(peliculaDto.getImagen());
         peliculaEnt.setTitulo(peliculaDto.getTitulo());
-
-
         String date = peliculaDto.getLanzamiento();
         peliculaEnt.setLanzamiento(string2LocalDate(date));
-
         peliculaEnt.setValoracion(peliculaDto.getValoracion());
-
         
         List<Personaje> personajeEntList = personajeMap.perListDto2ListEnt(peliculaDto.getPersonajes());
         peliculaEnt.setPersonajes(personajeEntList);
-
         
         List<Genero> generoEntList = generoMap.genListDTO2ListEnt(peliculaDto.getGeneros());
         peliculaEnt.setGeneros(generoEntList);
@@ -168,7 +152,6 @@ public Set<Pelicula> pelListDTO2ListEnt(List<PeliculaDTO> peliculaDtoList, boole
         peliculaDto.setValoracion(peliculaEnt.getValoracion());
 
         if (cargaPersonaje) {
-         
             peliculaDto.setPersonajes((List<PersonajeDTO>) personajeMap.perListEnt2ListDto((List<Personaje>) peliculaEnt.getPersonajes(), true));
       
             peliculaDto.setGeneros((List<GeneroDTO>) generoMap.generoEntList2DTOList((List<Genero>) peliculaEnt.getGeneros()));

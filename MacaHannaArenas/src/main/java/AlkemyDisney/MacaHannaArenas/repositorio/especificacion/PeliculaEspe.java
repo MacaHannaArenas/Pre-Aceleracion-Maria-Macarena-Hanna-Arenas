@@ -3,7 +3,6 @@ package AlkemyDisney.MacaHannaArenas.repositorio.especificacion;
 import AlkemyDisney.MacaHannaArenas.dto.PeliculaDtoFiltro;
 import AlkemyDisney.MacaHannaArenas.entidad.Genero;
 import AlkemyDisney.MacaHannaArenas.entidad.Pelicula;
-import AlkemyDisney.MacaHannaArenas.entidad.Personaje;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,34 +34,9 @@ public class PeliculaEspe {
                         )
                 );
             }
-/*
-            if (filtrosPelicula.getImagen() != null) {
-                filtros.add(
-                        criteriaBuilder.like(
-                                criteriaBuilder.lower(root.get("imagen")),
-                                "%" + filtrosPelicula.getImagen().toLowerCase() + "%"));
-            }
 
-            if (filtrosPelicula.getLanzamiento() != null) {
-                filtros.add(
-                        criteriaBuilder.like(
-                                criteriaBuilder.lower(root.get("lanzamiento")),
-                                "%" + filtrosPelicula.getLanzamiento().toLowerCase() + "%"));
-            }
-
-            if (filtrosPelicula.getValoracion() != null) {
-                filtros.add(
-                        criteriaBuilder.equal(root.get("valoracion"), filtrosPelicula.getValoracion()));
-            }
-
-            if (!CollectionUtils.isEmpty(filtrosPelicula.getPersonajes())) {
-                Join<Pelicula, Personaje> join = root.join("personajes", JoinType.INNER);
-                Expression<String> personajeId = join.get("personajeId");
-                filtros.add(personajeId.in(filtrosPelicula.getPersonajes()));
-            }
-*/
             if (!CollectionUtils.isEmpty(filtrosPelicula.getGeneros())) {
-                Join<Pelicula, Genero> join = root.join("pelicula_generos", JoinType.INNER);
+                Join<Pelicula, Genero> join = root.join("generos", JoinType.INNER);
                 Expression<String> generoId = join.get("generoId");
                 filtros.add(generoId.in(filtrosPelicula.getGeneros()));
             }

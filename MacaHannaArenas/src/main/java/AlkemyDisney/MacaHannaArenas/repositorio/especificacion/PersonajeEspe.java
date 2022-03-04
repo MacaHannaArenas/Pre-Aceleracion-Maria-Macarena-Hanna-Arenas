@@ -22,7 +22,6 @@ public class PersonajeEspe {
     
     public Specification<Personaje> porFiltros(PersonajeDtoFiltro filtrosDtoPersonaje) {
 
-        // LAMBDA FUNCTION
         return (root, query, criteriaBuilder) -> {
 
             

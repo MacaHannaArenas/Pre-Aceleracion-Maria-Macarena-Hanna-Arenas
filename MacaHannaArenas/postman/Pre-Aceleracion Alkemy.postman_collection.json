@@ -6,37 +6,97 @@
 	},
 	"item": [
 		{
-			"name": "Personaje Borrar",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": ""
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Pelicula Borrar",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXBlQGhvdG1haWwuY29tIiwiZXhwIjoxNjQ2NDM4Mzk4LCJpYXQiOjE2NDY0MDIzOTh9.0UXh8NWeEnY2B8I3ZSdofIpqatMWW8UyqpwbpxV1rm4",
+							"type": "string"
+						}
+					]
+				},
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:8080/peliculas/842120e9-7d4b-443a-8ca1-c419039548fa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"peliculas",
+						"842120e9-7d4b-443a-8ca1-c419039548fa"
+					]
 				}
 			},
-			"response": []
-		},
-		{
-			"name": "Genero Borrar",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": ""
+			"response": [
+				{
+					"name": "Pelicula Borrar",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/peliculas/1171d944-8e82-4e10-b9ee-972a5c7a4f76",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"peliculas",
+								"1171d944-8e82-4e10-b9ee-972a5c7a4f76"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Mar 2022 17:42:42 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": ""
 				}
-			},
-			"response": []
+			]
 		},
 		{
 			"name": "Personaje Buscar",
@@ -145,7 +205,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWNhaGFubmFAaG90bWFpbC5jb20iLCJleHAiOjE2NDYzNzUzNzUsImlhdCI6MTY0NjMzOTM3NX0.dUYHYKwDw5Sv0CuhDVI5Wq7rwKvORc9y8ln5WjBsXO4",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXBlQGhvdG1haWwuY29tIiwiZXhwIjoxNjQ2NDM4Mzk4LCJpYXQiOjE2NDY0MDIzOTh9.0UXh8NWeEnY2B8I3ZSdofIpqatMWW8UyqpwbpxV1rm4",
 							"type": "string"
 						}
 					]
@@ -153,7 +213,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/personajes/2fd96067-2b96-4f88-b8c9-c8c9aae3e84b",
+					"raw": "http://localhost:8080/personajes/6e927893-7a31-494d-abea-2369df8c2609",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -161,7 +221,7 @@
 					"port": "8080",
 					"path": [
 						"personajes",
-						"2fd96067-2b96-4f88-b8c9-c8c9aae3e84b"
+						"6e927893-7a31-494d-abea-2369df8c2609"
 					]
 				}
 			},
@@ -305,6 +365,146 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"personajeId\": \"2fd96067-2b96-4f88-b8c9-c8c9aae3e84b\",\n    \"nombre\": \"Mufasa\",\n    \"imagen\": \"/MufasaReyLeon.jpg\",\n    \"edad\": 5,\n    \"peso\": 110,\n    \"biografia\": \"Padre de simba\",\n    \"peliculas\": []\n}"
+				},
+				{
+					"name": "Personaje Buscar Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/personajes/6e927893-7a31-494d-abea-2369df8c2609",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personajes",
+								"6e927893-7a31-494d-abea-2369df8c2609"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Mar 2022 16:48:44 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"personajeId\": \"6e927893-7a31-494d-abea-2369df8c2609\",\n    \"nombre\": \"Simba\",\n    \"imagen\": \"/Simba.jpg\",\n    \"edad\": 30,\n    \"peso\": 50,\n    \"biografia\": \"Proagonista\",\n    \"peliculas\": [\n        {\n            \"peliculaId\": \"1171d944-8e82-4e10-b9ee-972a5c7a4f76\",\n            \"imagen\": \"/ReyLeon.jpg\",\n            \"titulo\": \"ReyLeon\",\n            \"lanzamiento\": \"1995/07/07\",\n            \"valoracion\": 5,\n            \"personajes\": null,\n            \"generos\": null\n        }\n    ]\n}"
+				},
+				{
+					"name": "Personaje Buscar Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/personajes/6e927893-7a31-494d-abea-2369df8c2609",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personajes",
+								"6e927893-7a31-494d-abea-2369df8c2609"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Mar 2022 17:32:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"personajeId\": \"6e927893-7a31-494d-abea-2369df8c2609\",\n    \"nombre\": \"Simba\",\n    \"imagen\": \"/Simba.jpg\",\n    \"edad\": 30,\n    \"peso\": 50,\n    \"biografia\": \"Proagonista\",\n    \"peliculas\": [\n        {\n            \"peliculaId\": \"1171d944-8e82-4e10-b9ee-972a5c7a4f76\",\n            \"imagen\": \"/ReyLeon.jpg\",\n            \"titulo\": \"ReyLeon\",\n            \"lanzamiento\": \"1995/07/07\",\n            \"valoracion\": 5,\n            \"personajes\": null,\n            \"generos\": null\n        }\n    ]\n}"
 				}
 			]
 		},
@@ -473,6 +673,75 @@
 					],
 					"cookie": [],
 					"body": "[\n    {\n        \"peliculaId\": \"\",\n        \"imagen\": \"/laSirenita.jpg\",\n        \"titulo\": \"La Sirenita\",\n        \"lanzamiento\": \"1995/07/07\",\n        \"valoracion\": 5,\n        \"personajes\": [],\n        \"generos\": []\n    },\n    {\n        \"peliculaId\": \"\",\n        \"imagen\": \"/laSirenita.jpg\",\n        \"titulo\": \"La Sirenita\",\n        \"lanzamiento\": \"1995/07/07\",\n        \"valoracion\": 5,\n        \"personajes\": [],\n        \"generos\": []\n    }\n]"
+				},
+				{
+					"name": "Pelicula Buscar",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/peliculas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"peliculas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Mar 2022 16:48:17 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"peliculaId\": \"842120e9-7d4b-443a-8ca1-c419039548fa\",\n        \"imagen\": \"/laSirenita.jpg\",\n        \"titulo\": \"La Sirenita\",\n        \"lanzamiento\": \"1995/07/07\",\n        \"valoracion\": 5,\n        \"personajes\": [\n            {\n                \"personajeId\": \"a7129362-1a90-4a67-a648-9e5cf15661d5\",\n                \"nombre\": \"Ariel\",\n                \"imagen\": \"/Ariel.jpg\",\n                \"edad\": 30,\n                \"peso\": 50,\n                \"biografia\": \"Proagonista\",\n                \"peliculas\": [\n                    {\n                        \"peliculaId\": \"842120e9-7d4b-443a-8ca1-c419039548fa\",\n                        \"imagen\": \"/laSirenita.jpg\",\n                        \"titulo\": \"La Sirenita\",\n                        \"lanzamiento\": \"1995/07/07\",\n                        \"valoracion\": 5,\n                        \"personajes\": null,\n                        \"generos\": null\n                    }\n                ]\n            }\n        ],\n        \"generos\": [\n            {\n                \"generoId\": \"52cc5140-effe-4ddc-9e54-18acd4f7dd42\",\n                \"nombre\": \"Animado\",\n                \"imagen\": \"/animado.png\",\n                \"peliculas\": null\n            }\n        ]\n    },\n    {\n        \"peliculaId\": \"1171d944-8e82-4e10-b9ee-972a5c7a4f76\",\n        \"imagen\": \"/ReyLeon.jpg\",\n        \"titulo\": \"ReyLeon\",\n        \"lanzamiento\": \"1995/07/07\",\n        \"valoracion\": 5,\n        \"personajes\": [\n            {\n                \"personajeId\": \"6e927893-7a31-494d-abea-2369df8c2609\",\n                \"nombre\": \"Simba\",\n                \"imagen\": \"/Simba.jpg\",\n                \"edad\": 30,\n                \"peso\": 50,\n                \"biografia\": \"Proagonista\",\n                \"peliculas\": [\n                    {\n                        \"peliculaId\": \"1171d944-8e82-4e10-b9ee-972a5c7a4f76\",\n                        \"imagen\": \"/ReyLeon.jpg\",\n                        \"titulo\": \"ReyLeon\",\n                        \"lanzamiento\": \"1995/07/07\",\n                        \"valoracion\": 5,\n                        \"personajes\": null,\n                        \"generos\": null\n                    }\n                ]\n            }\n        ],\n        \"generos\": [\n            {\n                \"generoId\": \"7c62500c-23cb-45e3-b385-d2cb5731fc6f\",\n                \"nombre\": \"Fantasia\",\n                \"imagen\": \"/fantasia.png\",\n                \"peliculas\": null\n            }\n        ]\n    }\n]"
 				}
 			]
 		},
@@ -503,38 +772,13 @@
 					],
 					"query": [
 						{
-							"key": "imagen",
-							"value": "\"/laSirenita.jpg",
-							"disabled": true
-						},
-						{
 							"key": "titulo",
-							"value": "ReyLeon",
-							"disabled": true
-						},
-						{
-							"key": "lanzamiento",
-							"value": "1994/07/07",
-							"disabled": true
-						},
-						{
-							"key": "valoracion",
-							"value": "5.0",
-							"disabled": true
-						},
-						{
-							"key": "personajes",
-							"value": "Simba",
+							"value": "La Sirenita",
 							"disabled": true
 						},
 						{
 							"key": "generos",
-							"value": "animado",
-							"disabled": true
-						},
-						{
-							"key": "orden",
-							"value": "ASC",
+							"value": "52cc5140-effe-4ddc-9e54-18acd4f7dd42",
 							"disabled": true
 						},
 						{
@@ -1013,6 +1257,312 @@
 					],
 					"cookie": [],
 					"body": "[\n    {\n        \"peliculaId\": \"\",\n        \"imagen\": \"/ReyLeon.jpg\",\n        \"titulo\": \"ReyLeon\",\n        \"lanzamiento\": \"1994/07/07\",\n        \"valoracion\": 5,\n        \"personajes\": [],\n        \"generos\": []\n    }\n]"
+				},
+				{
+					"name": "Pelicula Buscar Filtrado",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/peliculas?titulo=La Sirenita",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"peliculas"
+							],
+							"query": [
+								{
+									"key": "imagen",
+									"value": "\"/laSirenita.jpg",
+									"disabled": true
+								},
+								{
+									"key": "titulo",
+									"value": "La Sirenita"
+								},
+								{
+									"key": "orden",
+									"value": "DESC",
+									"disabled": true
+								},
+								{
+									"key": "lanzamiento",
+									"value": "1994/07/07",
+									"disabled": true
+								},
+								{
+									"key": "generos",
+									"value": "fantasia",
+									"disabled": true
+								},
+								{
+									"key": "valoracion",
+									"value": "5.0",
+									"disabled": true
+								},
+								{
+									"key": "personajes",
+									"value": "Simba",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Mar 2022 17:02:39 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"peliculaId\": \"842120e9-7d4b-443a-8ca1-c419039548fa\",\n        \"imagen\": \"/laSirenita.jpg\",\n        \"titulo\": \"La Sirenita\",\n        \"lanzamiento\": \"1995/07/07\",\n        \"valoracion\": 5,\n        \"personajes\": [\n            {\n                \"personajeId\": \"a7129362-1a90-4a67-a648-9e5cf15661d5\",\n                \"nombre\": \"Ariel\",\n                \"imagen\": \"/Ariel.jpg\",\n                \"edad\": 30,\n                \"peso\": 50,\n                \"biografia\": \"Proagonista\",\n                \"peliculas\": [\n                    {\n                        \"peliculaId\": \"842120e9-7d4b-443a-8ca1-c419039548fa\",\n                        \"imagen\": \"/laSirenita.jpg\",\n                        \"titulo\": \"La Sirenita\",\n                        \"lanzamiento\": \"1995/07/07\",\n                        \"valoracion\": 5,\n                        \"personajes\": null,\n                        \"generos\": null\n                    }\n                ]\n            }\n        ],\n        \"generos\": [\n            {\n                \"generoId\": \"52cc5140-effe-4ddc-9e54-18acd4f7dd42\",\n                \"nombre\": \"Animado\",\n                \"imagen\": \"/animado.png\",\n                \"peliculas\": null\n            }\n        ]\n    }\n]"
+				},
+				{
+					"name": "Pelicula Buscar Filtrado",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/peliculas?generos=52cc5140-effe-4ddc-9e54-18acd4f7dd42",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"peliculas"
+							],
+							"query": [
+								{
+									"key": "imagen",
+									"value": "\"/laSirenita.jpg",
+									"disabled": true
+								},
+								{
+									"key": "titulo",
+									"value": "La Sirenita",
+									"disabled": true
+								},
+								{
+									"key": "orden",
+									"value": "DESC",
+									"disabled": true
+								},
+								{
+									"key": "lanzamiento",
+									"value": "1994/07/07",
+									"disabled": true
+								},
+								{
+									"key": "generos",
+									"value": "52cc5140-effe-4ddc-9e54-18acd4f7dd42"
+								},
+								{
+									"key": "valoracion",
+									"value": "5.0",
+									"disabled": true
+								},
+								{
+									"key": "personajes",
+									"value": "Simba",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Mar 2022 17:15:33 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"peliculaId\": \"842120e9-7d4b-443a-8ca1-c419039548fa\",\n        \"imagen\": \"/laSirenita.jpg\",\n        \"titulo\": \"La Sirenita\",\n        \"lanzamiento\": \"1995/07/07\",\n        \"valoracion\": 5,\n        \"personajes\": [\n            {\n                \"personajeId\": \"a7129362-1a90-4a67-a648-9e5cf15661d5\",\n                \"nombre\": \"Ariel\",\n                \"imagen\": \"/Ariel.jpg\",\n                \"edad\": 30,\n                \"peso\": 50,\n                \"biografia\": \"Proagonista\",\n                \"peliculas\": [\n                    {\n                        \"peliculaId\": \"842120e9-7d4b-443a-8ca1-c419039548fa\",\n                        \"imagen\": \"/laSirenita.jpg\",\n                        \"titulo\": \"La Sirenita\",\n                        \"lanzamiento\": \"1995/07/07\",\n                        \"valoracion\": 5,\n                        \"personajes\": null,\n                        \"generos\": null\n                    }\n                ]\n            }\n        ],\n        \"generos\": [\n            {\n                \"generoId\": \"52cc5140-effe-4ddc-9e54-18acd4f7dd42\",\n                \"nombre\": \"Animado\",\n                \"imagen\": \"/animado.png\",\n                \"peliculas\": null\n            }\n        ]\n    }\n]"
+				},
+				{
+					"name": "Pelicula Buscar Filtrado",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/peliculas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"peliculas"
+							],
+							"query": [
+								{
+									"key": "titulo",
+									"value": "La Sirenita",
+									"disabled": true
+								},
+								{
+									"key": "generos",
+									"value": "52cc5140-effe-4ddc-9e54-18acd4f7dd42",
+									"disabled": true
+								},
+								{
+									"key": "orden",
+									"value": "DESC",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Mar 2022 17:19:59 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"peliculaId\": \"1171d944-8e82-4e10-b9ee-972a5c7a4f76\",\n        \"imagen\": \"/ReyLeon.jpg\",\n        \"titulo\": \"ReyLeon\",\n        \"lanzamiento\": \"1995/07/07\",\n        \"valoracion\": 5,\n        \"personajes\": [\n            {\n                \"personajeId\": \"6e927893-7a31-494d-abea-2369df8c2609\",\n                \"nombre\": \"Simba\",\n                \"imagen\": \"/Simba.jpg\",\n                \"edad\": 30,\n                \"peso\": 50,\n                \"biografia\": \"Proagonista\",\n                \"peliculas\": [\n                    {\n                        \"peliculaId\": \"1171d944-8e82-4e10-b9ee-972a5c7a4f76\",\n                        \"imagen\": \"/ReyLeon.jpg\",\n                        \"titulo\": \"ReyLeon\",\n                        \"lanzamiento\": \"1995/07/07\",\n                        \"valoracion\": 5,\n                        \"personajes\": null,\n                        \"generos\": null\n                    }\n                ]\n            }\n        ],\n        \"generos\": [\n            {\n                \"generoId\": \"7c62500c-23cb-45e3-b385-d2cb5731fc6f\",\n                \"nombre\": \"Fantasia\",\n                \"imagen\": \"/fantasia.png\",\n                \"peliculas\": null\n            }\n        ]\n    },\n    {\n        \"peliculaId\": \"842120e9-7d4b-443a-8ca1-c419039548fa\",\n        \"imagen\": \"/laSirenita.jpg\",\n        \"titulo\": \"La Sirenita\",\n        \"lanzamiento\": \"1995/07/07\",\n        \"valoracion\": 5,\n        \"personajes\": [\n            {\n                \"personajeId\": \"a7129362-1a90-4a67-a648-9e5cf15661d5\",\n                \"nombre\": \"Ariel\",\n                \"imagen\": \"/Ariel.jpg\",\n                \"edad\": 30,\n                \"peso\": 50,\n                \"biografia\": \"Proagonista\",\n                \"peliculas\": [\n                    {\n                        \"peliculaId\": \"842120e9-7d4b-443a-8ca1-c419039548fa\",\n                        \"imagen\": \"/laSirenita.jpg\",\n                        \"titulo\": \"La Sirenita\",\n                        \"lanzamiento\": \"1995/07/07\",\n                        \"valoracion\": 5,\n                        \"personajes\": null,\n                        \"generos\": null\n                    }\n                ]\n            }\n        ],\n        \"generos\": [\n            {\n                \"generoId\": \"52cc5140-effe-4ddc-9e54-18acd4f7dd42\",\n                \"nombre\": \"Animado\",\n                \"imagen\": \"/animado.png\",\n                \"peliculas\": null\n            }\n        ]\n    }\n]"
 				}
 			]
 		},
@@ -1024,7 +1574,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWNhaGFubmFAaG90bWFpbC5jb20iLCJleHAiOjE2NDYzNzUzNzUsImlhdCI6MTY0NjMzOTM3NX0.dUYHYKwDw5Sv0CuhDVI5Wq7rwKvORc9y8ln5WjBsXO4",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXBlQGhvdG1haWwuY29tIiwiZXhwIjoxNjQ2NDM4Mzk4LCJpYXQiOjE2NDY0MDIzOTh9.0UXh8NWeEnY2B8I3ZSdofIpqatMWW8UyqpwbpxV1rm4",
 							"type": "string"
 						}
 					]
@@ -1032,7 +1582,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/peliculas/47235c1e-ea57-4408-afba-ddc40256134d",
+					"raw": "http://localhost:8080/peliculas/1171d944-8e82-4e10-b9ee-972a5c7a4f76",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -1040,7 +1590,7 @@
 					"port": "8080",
 					"path": [
 						"peliculas",
-						"47235c1e-ea57-4408-afba-ddc40256134d"
+						"1171d944-8e82-4e10-b9ee-972a5c7a4f76"
 					]
 				}
 			},
@@ -1114,6 +1664,146 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"peliculaId\": \"47235c1e-ea57-4408-afba-ddc40256134d\",\n    \"imagen\": \"/laSirenita.jpg\",\n    \"titulo\": \"La Sirenita\",\n    \"lanzamiento\": \"1995/07/07\",\n    \"valoracion\": 5,\n    \"personajes\": [\n        {\n            \"personajeId\": \"a8eb4c2f-2a52-45d6-9080-b7d606934cd1\",\n            \"nombre\": \"Ariel\",\n            \"imagen\": \"/Ariel.jpg\",\n            \"edad\": 30,\n            \"peso\": 50,\n            \"biografia\": \"Proagonista\",\n            \"peliculas\": [\n                {\n                    \"peliculaId\": \"47235c1e-ea57-4408-afba-ddc40256134d\",\n                    \"imagen\": \"/laSirenita.jpg\",\n                    \"titulo\": \"La Sirenita\",\n                    \"lanzamiento\": \"1995/07/07\",\n                    \"valoracion\": 5,\n                    \"personajes\": null,\n                    \"generos\": null\n                }\n            ]\n        }\n    ],\n    \"generos\": [\n        {\n            \"generoId\": \"2723467a-7a0b-47f0-8242-0beddeba8c2c\",\n            \"nombre\": \"Animado\",\n            \"imagen\": \"/animado.png\",\n            \"peliculas\": null\n        }\n    ]\n}"
+				},
+				{
+					"name": "Pelicula Buscar Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/peliculas/1171d944-8e82-4e10-b9ee-972a5c7a4f76",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"peliculas",
+								"1171d944-8e82-4e10-b9ee-972a5c7a4f76"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Mar 2022 17:33:02 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"peliculaId\": \"1171d944-8e82-4e10-b9ee-972a5c7a4f76\",\n    \"imagen\": \"/ReyLeon.jpg\",\n    \"titulo\": \"ReyLeon\",\n    \"lanzamiento\": \"1995/07/07\",\n    \"valoracion\": 5,\n    \"personajes\": [\n        {\n            \"personajeId\": \"6e927893-7a31-494d-abea-2369df8c2609\",\n            \"nombre\": \"Simba\",\n            \"imagen\": \"/Simba.jpg\",\n            \"edad\": 30,\n            \"peso\": 50,\n            \"biografia\": \"Proagonista\",\n            \"peliculas\": [\n                {\n                    \"peliculaId\": \"1171d944-8e82-4e10-b9ee-972a5c7a4f76\",\n                    \"imagen\": \"/ReyLeon.jpg\",\n                    \"titulo\": \"ReyLeon\",\n                    \"lanzamiento\": \"1995/07/07\",\n                    \"valoracion\": 5,\n                    \"personajes\": null,\n                    \"generos\": null\n                }\n            ]\n        }\n    ],\n    \"generos\": [\n        {\n            \"generoId\": \"7c62500c-23cb-45e3-b385-d2cb5731fc6f\",\n            \"nombre\": \"Fantasia\",\n            \"imagen\": \"/fantasia.png\",\n            \"peliculas\": null\n        }\n    ]\n}"
+				},
+				{
+					"name": "Pelicula Buscar Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/peliculas/1171d944-8e82-4e10-b9ee-972a5c7a4f76",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"peliculas",
+								"1171d944-8e82-4e10-b9ee-972a5c7a4f76"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Mar 2022 17:34:00 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"peliculaId\": \"1171d944-8e82-4e10-b9ee-972a5c7a4f76\",\n    \"imagen\": \"/ReyLeon.jpg\",\n    \"titulo\": \"ReyLeon2\",\n    \"lanzamiento\": \"1995/07/07\",\n    \"valoracion\": 5,\n    \"personajes\": [\n        {\n            \"personajeId\": \"2cd4f909-fe58-458e-8067-d9f29d797278\",\n            \"nombre\": \"Simba\",\n            \"imagen\": \"/Simba.jpg\",\n            \"edad\": 30,\n            \"peso\": 50,\n            \"biografia\": \"Proagonista\",\n            \"peliculas\": [\n                {\n                    \"peliculaId\": \"1171d944-8e82-4e10-b9ee-972a5c7a4f76\",\n                    \"imagen\": \"/ReyLeon.jpg\",\n                    \"titulo\": \"ReyLeon2\",\n                    \"lanzamiento\": \"1995/07/07\",\n                    \"valoracion\": 5,\n                    \"personajes\": null,\n                    \"generos\": null\n                }\n            ]\n        }\n    ],\n    \"generos\": [\n        {\n            \"generoId\": \"f0ed6c19-0193-4eed-8c42-b3f3143e96c3\",\n            \"nombre\": \"Fantasia\",\n            \"imagen\": \"/fantasia.png\",\n            \"peliculas\": null\n        }\n    ]\n}"
 				}
 			]
 		},
@@ -1125,7 +1815,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWNhaGFubmFAaG90bWFpbC5jb20iLCJleHAiOjE2NDYzNzUzNzUsImlhdCI6MTY0NjMzOTM3NX0.dUYHYKwDw5Sv0CuhDVI5Wq7rwKvORc9y8ln5WjBsXO4",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXBlQGhvdG1haWwuY29tIiwiZXhwIjoxNjQ2NDM4Mzk4LCJpYXQiOjE2NDY0MDIzOTh9.0UXh8NWeEnY2B8I3ZSdofIpqatMWW8UyqpwbpxV1rm4",
 							"type": "string"
 						}
 					]
@@ -1217,37 +1907,123 @@
 			]
 		},
 		{
-			"name": "Personaje Modificar",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"url": {
-					"raw": ""
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Pelicula Modificar",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXBlQGhvdG1haWwuY29tIiwiZXhwIjoxNjQ2NDM4Mzk4LCJpYXQiOjE2NDY0MDIzOTh9.0UXh8NWeEnY2B8I3ZSdofIpqatMWW8UyqpwbpxV1rm4",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\" : \"ReyLeon2\",\r\n    \"imagen\" : \"/ReyLeon.jpg\",\r\n    \"lanzamiento\" : \"1995/07/07\",\r\n    \"valoracion\" : 5,\r\n     \"personajes\":   [\r\n                    {\r\n                       \"nombre\" : \"Simba\",\r\n    \"imagen\" : \"/Simba.jpg\",\r\n    \"edad\" : \"30\",\r\n    \"peso\" : \"50\",\r\n    \"biografia\" : \"Proagonista\"\r\n                    }\r\n                    ],\r\n    \"generos\":   [\r\n                {\r\n                    \"nombre\": \"Fantasia\",\r\n                    \"imagen\": \"/fantasia.png\"\r\n                }\r\n                ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:8080/peliculas/1171d944-8e82-4e10-b9ee-972a5c7a4f76",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"peliculas",
+						"1171d944-8e82-4e10-b9ee-972a5c7a4f76"
+					]
 				}
 			},
-			"response": []
-		},
-		{
-			"name": "Genero Modificar",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"url": {
-					"raw": ""
+			"response": [
+				{
+					"name": "Pelicula Modificar",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\" : \"ReyLeon2\",\r\n    \"imagen\" : \"/ReyLeon.jpg\",\r\n    \"lanzamiento\" : \"1995/07/07\",\r\n    \"valoracion\" : 5,\r\n     \"personajes\":   [\r\n                    {\r\n                       \"nombre\" : \"Simba\",\r\n    \"imagen\" : \"/Simba.jpg\",\r\n    \"edad\" : \"30\",\r\n    \"peso\" : \"50\",\r\n    \"biografia\" : \"Proagonista\"\r\n                    }\r\n                    ],\r\n    \"generos\":   [\r\n                {\r\n                    \"nombre\": \"Fantasia\",\r\n                    \"imagen\": \"/fantasia.png\"\r\n                }\r\n                ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/peliculas/1171d944-8e82-4e10-b9ee-972a5c7a4f76",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"peliculas",
+								"1171d944-8e82-4e10-b9ee-972a5c7a4f76"
+							]
+						}
+					},
+					"status": "Accepted",
+					"code": 202,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Mar 2022 17:33:42 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"peliculaId\": \"1171d944-8e82-4e10-b9ee-972a5c7a4f76\",\n    \"imagen\": \"/ReyLeon.jpg\",\n    \"titulo\": \"ReyLeon2\",\n    \"lanzamiento\": \"1995/07/07\",\n    \"valoracion\": 5,\n    \"personajes\": null,\n    \"generos\": null\n}"
 				}
-			},
-			"response": []
+			]
 		},
 		{
 			"name": "Personaje Guardar",
@@ -1452,7 +2228,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYWNhaGFubmFAaG90bWFpbC5jb20iLCJleHAiOjE2NDYzNzUzNzUsImlhdCI6MTY0NjMzOTM3NX0.dUYHYKwDw5Sv0CuhDVI5Wq7rwKvORc9y8ln5WjBsXO4",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXBlQGhvdG1haWwuY29tIiwiZXhwIjoxNjQ2NDQ4MTgyLCJpYXQiOjE2NDY0MTIxODJ9.PZWb6KclG-9qu_0P87O4e66nPztQc7zEfn_PTQk2Uc8",
 							"type": "string"
 						}
 					]
@@ -1461,7 +2237,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"titulo\" : \"La Sirenita\",\r\n    \"imagen\" : \"/laSirenita.jpg\",\r\n    \"lanzamiento\" : \"1995/07/07\",\r\n    \"valoracion\" : 5,\r\n     \"personajes\":   [\r\n                    {\r\n                       \"nombre\" : \"Ariel\",\r\n    \"imagen\" : \"/Ariel.jpg\",\r\n    \"edad\" : \"30\",\r\n    \"peso\" : \"50\",\r\n    \"biografia\" : \"Proagonista\"\r\n                    }\r\n                    ],\r\n    \"generos\":   [\r\n                {\r\n                    \"nombre\": \"Animado\",\r\n                    \"imagen\": \"/animado.png\"\r\n                }\r\n                ]\r\n}\r\n",
+					"raw": "{\r\n    \"titulo\" : \"ReyLeon\",\r\n    \"imagen\" : \"/ReyLeon.jpg\",\r\n    \"lanzamiento\" : \"1995/07/07\",\r\n    \"valoracion\" : 5,\r\n     \"personajes\":   [\r\n                    {\r\n                       \"nombre\" : \"Simba\",\r\n    \"imagen\" : \"/Simba.jpg\",\r\n    \"edad\" : \"30\",\r\n    \"peso\" : \"50\",\r\n    \"biografia\" : \"Proagonista\"\r\n                    }\r\n                    ],\r\n    \"generos\":   [\r\n                {\r\n                    \"nombre\": \"Fantasia\",\r\n                    \"imagen\": \"/fantasia.png\"\r\n                }\r\n                ]\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1558,17 +2334,105 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"peliculaId\": \"ed3ea175-9406-4e95-8729-565eac388f5c\",\n    \"imagen\": \"/ReyLeon.jpg\",\n    \"titulo\": \"ReyLeon\",\n    \"lanzamiento\": \"1994/07/07\",\n    \"valoracion\": 5,\n    \"personajes\": null,\n    \"generos\": null\n}"
+				},
+				{
+					"name": "Pelicula Guardar",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\" : \"ReyLeon\",\r\n    \"imagen\" : \"/ReyLeon.jpg\",\r\n    \"lanzamiento\" : \"1995/07/07\",\r\n    \"valoracion\" : 5,\r\n     \"personajes\":   [\r\n                    {\r\n                       \"nombre\" : \"Simba\",\r\n    \"imagen\" : \"/Simba.jpg\",\r\n    \"edad\" : \"30\",\r\n    \"peso\" : \"50\",\r\n    \"biografia\" : \"Proagonista\"\r\n                    }\r\n                    ],\r\n    \"generos\":   [\r\n                {\r\n                    \"nombre\": \"Fantasia\",\r\n                    \"imagen\": \"/fantasia.png\"\r\n                }\r\n                ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/peliculas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"peliculas"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Mar 2022 17:41:22 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"peliculaId\": \"5b0db327-a7c5-41c8-89c6-4f3c5ec47b0a\",\n    \"imagen\": \"/ReyLeon.jpg\",\n    \"titulo\": \"ReyLeon\",\n    \"lanzamiento\": \"1995/07/07\",\n    \"valoracion\": 5,\n    \"personajes\": null,\n    \"generos\": null\n}"
 				}
 			]
 		},
 		{
 			"name": "Genero Guardar",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwZXBlQGhvdG1haWwuY29tIiwiZXhwIjoxNjQ2NDM4Mzk4LCJpYXQiOjE2NDY0MDIzOTh9.0UXh8NWeEnY2B8I3ZSdofIpqatMWW8UyqpwbpxV1rm4",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "",
+					"raw": " {\r\n     \"nombre\": \"Fantasia\",\r\n    \"imagen\": \"/fantasia.png\"\r\n }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -1576,10 +2440,97 @@
 					}
 				},
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:8080/generos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"generos"
+					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Genero Guardar",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n     \"nombre\": \"Fantasia\",\r\n    \"imagen\": \"/fantasia.png\"\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/generos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"generos"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 04 Mar 2022 17:38:01 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"generoId\": \"d6e19563-4874-4bfa-8124-43f6a84d7ddc\",\n    \"nombre\": \"Fantasia\",\n    \"imagen\": \"/fantasia.png\",\n    \"peliculas\": null\n}"
+				}
+			]
 		},
 		{
 			"name": "Usuario Login",

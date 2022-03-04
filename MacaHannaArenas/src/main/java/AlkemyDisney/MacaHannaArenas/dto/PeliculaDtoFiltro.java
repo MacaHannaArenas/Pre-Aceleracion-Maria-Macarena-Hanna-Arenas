@@ -1,7 +1,6 @@
 package AlkemyDisney.MacaHannaArenas.dto;
 
 import java.util.List;
-import java.util.Set;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,19 +12,12 @@ import lombok.Setter;
 @AllArgsConstructor
 public class PeliculaDtoFiltro {
 
-    //dto completo
-    //dto basico
-    private String imagen;
+    
     private String titulo;
-    private String lanzamiento;
-    //dto basico
-    private Float valoracion;
-    private List<PersonajeDTO> personajes;
-    //private String personaje;
-//    private Set<String> personajes;
-    private List<GeneroDTO> generos;
-//    private Set<String> generos;
-    //dto completo
+  
+    private List<String> generos;
+
+   
     private String orden;
 
     public boolean isASC() {
@@ -36,4 +28,13 @@ public class PeliculaDtoFiltro {
         return orden.compareToIgnoreCase("DESC") == 0;
     }
 
+    public PeliculaDtoFiltro(String imagen, String titulo, List<String> generos, String orden) {
+     
+        this.titulo = titulo;
+
+        this.generos = generos;
+        this.orden = orden;
+    }
+
+    
 }

@@ -1,10 +1,8 @@
 package AlkemyDisney.MacaHannaArenas.servicio.impl;
 
-import AlkemyDisney.MacaHannaArenas.dto.GeneroDTO;
 import AlkemyDisney.MacaHannaArenas.dto.PeliculaDTO;
 import AlkemyDisney.MacaHannaArenas.dto.PeliculaDtoBasico;
 import AlkemyDisney.MacaHannaArenas.dto.PeliculaDtoFiltro;
-import AlkemyDisney.MacaHannaArenas.dto.PersonajeDTO;
 import AlkemyDisney.MacaHannaArenas.entidad.Genero;
 import AlkemyDisney.MacaHannaArenas.entidad.Pelicula;
 import AlkemyDisney.MacaHannaArenas.entidad.Personaje;
@@ -20,8 +18,6 @@ import AlkemyDisney.MacaHannaArenas.repositorio.especificacion.PeliculaEspe;
 import AlkemyDisney.MacaHannaArenas.servicio.PeliculaSvs;
 import AlkemyDisney.MacaHannaArenas.validaciones.dtoVal;
 import java.util.List;
-import java.util.Set;
-import javax.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
@@ -49,17 +45,6 @@ public class PeliculaSvsImp implements PeliculaSvs {
     @Autowired
     private dtoVal valDTO;
 
-    /*
-    @Override
-    public PeliculaDTO guardarPelicula(PeliculaDTO peliculaDTO) {
-
-        Pelicula pelEnt = pelMap.pelDTO2Ent(peliculaDTO, false);
-        Pelicula peliculaGuardada = peliculaRep.save(pelEnt);
-        PeliculaDTO peliculaDtoGuardado = pelMap.pelEnt2DTO(peliculaGuardada, false);
-
-        return peliculaDtoGuardado;
-
-    }*/
     @Override
     public PeliculaDTO guardarPelicula(PeliculaDTO peliculaDTO) {
         try {
@@ -74,30 +59,6 @@ public class PeliculaSvsImp implements PeliculaSvs {
 
     }
 
-    /*
-    @Override
-    public PeliculaDTO modificarPelicula(String peliculaId, PeliculaDTO peliculaDTO) {
-
-              if (peliculaRep.existsById(peliculaId)) {
-            if (valDTO.peliculaDtoVal(peliculaDTO)) {
-             
-            Pelicula peliculaGuardada = peliculaRep.getById(peliculaId);
-
-            pelMap.pelRefrescarEnt(peliculaGuardada, peliculaDTO);
-
-            Pelicula peliculaEntModif = peliculaRep.save(peliculaGuardada);
-
-            PeliculaDTO peliculaDTOModif = pelMap.pelEnt2DTO(peliculaEntModif, false);
-
-            return peliculaDTOModif;
-            
-            } else {
-                throw new PeliculaExc(MsjeExc.DTO_INVALIDO);
-            }
-        } else {
-            throw new PeliculaExc(MsjeExc.PELICULA_NO_ENCONTRADO);
-        }
-    }*/
     @Override
     public PeliculaDTO modificarPelicula(String peliculaId, PeliculaDTO peliculaDTO) {
 
@@ -149,32 +110,10 @@ public class PeliculaSvsImp implements PeliculaSvs {
         return listaPelsDTO;
     }
 
-    /*
     @Override
-    public List<PeliculaDTO> peliculaFiltro(String titulo, String imagen, String lanzamiento, float valoracion, List<PersonajeDTO> personajes, List<GeneroDTO> generos, String orden) {
+    public List<PeliculaDTO> peliculaFiltro(String titulo, List<String> generos, String orden) {
 
-        if (titulo.isEmpty() || titulo == null
-                && imagen.isEmpty() || imagen == null
-                && lanzamiento.isEmpty() || lanzamiento == null
-                && String.valueOf(valoracion).isEmpty() || String.valueOf(valoracion) == null
-                && personajes.isEmpty() || personajes == null
-                && generos.isEmpty() || generos == null
-                && orden.isEmpty() || orden == null) {
-
-            return peliculaCompleta();
-
-        } else {
-            PeliculaDtoFiltro pelDtoFiltros = new PeliculaDtoFiltro(titulo, imagen, lanzamiento, valoracion, personajes, generos, orden);
-            List<Pelicula> listaPelEnt = peliculaRep.findAll(pelEspe.getFiltered(pelDtoFiltros));
-            List<PeliculaDTO> listaPelsDTO = pelMap.pelListEnt2ListDTO(listaPelEnt, true);
-
-            return listaPelsDTO;
-        }
-    }*/
-    @Override
-    public List<PeliculaDTO> peliculaFiltro(String titulo, String imagen, String lanzamiento, Float valoracion, List<PersonajeDTO> personajes, List<GeneroDTO> generos, String orden) {
-
-        PeliculaDtoFiltro pelDtoFiltros = new PeliculaDtoFiltro(titulo, imagen, lanzamiento, valoracion, personajes, generos, orden);
+        PeliculaDtoFiltro pelDtoFiltros = new PeliculaDtoFiltro(titulo, generos, orden);
         List<Pelicula> listaPelEnt = peliculaRep.findAll(pelEspe.getFiltered(pelDtoFiltros));
         List<PeliculaDTO> listaPelsDTO = pelMap.pelListEnt2ListDTO(listaPelEnt, true);
 
@@ -198,8 +137,6 @@ public class PeliculaSvsImp implements PeliculaSvs {
     public void agregarPersonaje(String personajeId, String peliculaId) {
 
         try {
-            //if (personajeRep.existsById(personajeId) && peliculaRep.existsById(peliculaId)) {
-
             Pelicula pelEnt = peliculaRep.getById(peliculaId);
             Personaje personajeEnt = personajeRep.getById(personajeId);
 
@@ -208,13 +145,7 @@ public class PeliculaSvsImp implements PeliculaSvs {
             personajes.add(personajeEnt);
             pelEnt.setPersonajes(personajes);
             peliculaRep.save(pelEnt);
-            /*
-        } else if (!personajeRep.existsById(peliculaId)) {
-            throw new EntityNotFoundException(MsjeExc.PERSONAJE_NO_ENCONTRADO);
 
-        } else if (!peliculaRep.existsById(peliculaId)) {
-            throw new EntityNotFoundException(MsjeExc.PELICULA_NO_ENCONTRADO);
-        }*/
         } catch (PeliculaExc exc) {
             throw new PeliculaExc(MsjeExc.PELICULA_NO_ENCONTRADO);
 
@@ -227,7 +158,6 @@ public class PeliculaSvsImp implements PeliculaSvs {
     public void removerPersonaje(String personajeId, String peliculaId) {
 
         try {
-            //if (personajeRep.existsById(personajeId) && peliculaRep.existsById(peliculaId)) {
 
             Pelicula pelEnt = peliculaRep.getById(peliculaId);
             Personaje personajeEnt = personajeRep.getById(personajeId);
@@ -237,13 +167,7 @@ public class PeliculaSvsImp implements PeliculaSvs {
             personajes.remove(personajeEnt);
             pelEnt.setPersonajes(personajes);
             peliculaRep.save(pelEnt);
-            /*
-        } else if (!personajeRep.existsById(personajeId)) {
-            throw new EntityNotFoundException(MsjeExc.PERSONAJE_NO_ENCONTRADO);
 
-        } else if (!peliculaRep.existsById(peliculaId)) {
-            throw new EntityNotFoundException(MsjeExc.PELICULA_NO_ENCONTRADO);
-        }*/
         } catch (PeliculaExc exc) {
             throw new PeliculaExc(MsjeExc.PELICULA_NO_ENCONTRADO);
 
@@ -257,7 +181,6 @@ public class PeliculaSvsImp implements PeliculaSvs {
     public void agregarGenero(String generoId, String peliculaId) {
 
         try {
-            //if (generoRep.existsById(idGenre) && peliculaRep.existsById(peliculaId)) {
 
             Pelicula pelEnt = peliculaRep.getById(peliculaId);
             Genero genre = generoRep.getById(generoId);
@@ -267,13 +190,6 @@ public class PeliculaSvsImp implements PeliculaSvs {
             generos.add(genre);
             pelEnt.setGeneros(generos);
             peliculaRep.save(pelEnt);
-            /*
-        } else if (!generoRep.existsById(idGenre)) {
-            throw new EntityNotFoundException(MsjeExc.GENERO_NO_ENCONTRADO);
-
-        } else if (!peliculaRep.existsById(peliculaId)) {
-            throw new EntityNotFoundException(MsjeExc.PELICULA_NO_ENCONTRADO);
-        }*/
 
         } catch (PeliculaExc exc) {
             throw new PeliculaExc(MsjeExc.PELICULA_NO_ENCONTRADO);
@@ -288,7 +204,6 @@ public class PeliculaSvsImp implements PeliculaSvs {
     public void removerGenero(String generoId, String peliculaId) {
 
         try {
-            //if (generoRep.existsById(idGenre) && peliculaRep.existsById(peliculaId)) {
 
             Pelicula pelEnt = peliculaRep.getById(peliculaId);
             Genero genre = generoRep.getById(generoId);
@@ -298,13 +213,7 @@ public class PeliculaSvsImp implements PeliculaSvs {
             generos.remove(genre);
             pelEnt.setGeneros(generos);
             peliculaRep.save(pelEnt);
-            /*
-        } else if (!generoRep.existsById(idGenre)) {
-            throw new EntityNotFoundException(MsjeExc.GENERO_NO_ENCONTRADO);
 
-        } else if (!peliculaRep.existsById(peliculaId)) {
-            throw new EntityNotFoundException(MsjeExc.PELICULA_NO_ENCONTRADO);
-        }*/
         } catch (PeliculaExc exc) {
             throw new PeliculaExc(MsjeExc.PELICULA_NO_ENCONTRADO);
 
