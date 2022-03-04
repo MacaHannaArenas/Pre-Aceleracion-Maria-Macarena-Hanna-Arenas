@@ -47,11 +47,11 @@ public class PeliculaCtrl {
             @RequestParam(required = false) String lanzamiento,
             //dto basico
             @RequestParam(required = false) Float valoracion,
-          //  @RequestParam(required = false) List<PersonajeDTO> personajes,
-            @RequestParam(required = false) Set<String> personajes,
+            @RequestParam(required = false) List<PersonajeDTO> personajes,
             
-            //@RequestParam(required = false) List<GeneroDTO> generos,
-             @RequestParam(required = false) Set<String> generos,
+            
+            @RequestParam(required = false) List<GeneroDTO> generos,
+            
             
             @RequestParam(required = false, defaultValue = "ASC") String orden
     //Dto completo

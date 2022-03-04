@@ -172,7 +172,7 @@ public class PeliculaSvsImp implements PeliculaSvs {
         }
     }*/
     @Override
-    public List<PeliculaDTO> peliculaFiltro(String titulo, String imagen, String lanzamiento, Float valoracion, Set<String> personajes, Set<String> generos, String orden) {
+    public List<PeliculaDTO> peliculaFiltro(String titulo, String imagen, String lanzamiento, Float valoracion, List<PersonajeDTO> personajes, List<GeneroDTO> generos, String orden) {
 
         PeliculaDtoFiltro pelDtoFiltros = new PeliculaDtoFiltro(titulo, imagen, lanzamiento, valoracion, personajes, generos, orden);
         List<Pelicula> listaPelEnt = peliculaRep.findAll(pelEspe.getFiltered(pelDtoFiltros));
@@ -203,7 +203,7 @@ public class PeliculaSvsImp implements PeliculaSvs {
             Pelicula pelEnt = peliculaRep.getById(peliculaId);
             Personaje personajeEnt = personajeRep.getById(personajeId);
 
-            Set<Personaje> personajes = pelEnt.getPersonajes();
+            List<Personaje> personajes = pelEnt.getPersonajes();
 
             personajes.add(personajeEnt);
             pelEnt.setPersonajes(personajes);
@@ -232,7 +232,7 @@ public class PeliculaSvsImp implements PeliculaSvs {
             Pelicula pelEnt = peliculaRep.getById(peliculaId);
             Personaje personajeEnt = personajeRep.getById(personajeId);
 
-            Set<Personaje> personajes = pelEnt.getPersonajes();
+            List<Personaje> personajes = pelEnt.getPersonajes();
 
             personajes.remove(personajeEnt);
             pelEnt.setPersonajes(personajes);
@@ -262,7 +262,7 @@ public class PeliculaSvsImp implements PeliculaSvs {
             Pelicula pelEnt = peliculaRep.getById(peliculaId);
             Genero genre = generoRep.getById(generoId);
 
-            Set<Genero> generos = pelEnt.getGeneros();
+            List<Genero> generos = pelEnt.getGeneros();
 
             generos.add(genre);
             pelEnt.setGeneros(generos);
@@ -293,7 +293,7 @@ public class PeliculaSvsImp implements PeliculaSvs {
             Pelicula pelEnt = peliculaRep.getById(peliculaId);
             Genero genre = generoRep.getById(generoId);
 
-            Set<Genero> generos = pelEnt.getGeneros();
+            List<Genero> generos = pelEnt.getGeneros();
 
             generos.remove(genre);
             pelEnt.setGeneros(generos);

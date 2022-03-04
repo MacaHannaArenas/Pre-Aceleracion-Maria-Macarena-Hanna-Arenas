@@ -26,9 +26,9 @@ public interface PeliculaSvs {
 
     List<PeliculaDTO> peliculaCompleta();
 
-    //List<PeliculaDTO> peliculaFiltro(String titulo, String imagen, String lanzamiento, Float valoracion, List<PersonajeDTO> personajes, List<GeneroDTO> generos, String orden);
+    List<PeliculaDTO> peliculaFiltro(String titulo, String imagen, String lanzamiento, Float valoracion, List<PersonajeDTO> personajes, List<GeneroDTO> generos, String orden);
 
-    List<PeliculaDTO> peliculaFiltro(String titulo, String imagen, String lanzamiento, Float valoracion, Set<String> personajes, Set<String> generos, String orden);
+    //List<PeliculaDTO> peliculaFiltro(String titulo, String imagen, String lanzamiento, Float valoracion, Set<String> personajes, Set<String> generos, String orden);
     
     PeliculaDTO peliculaPorId(String peliculaId);
 

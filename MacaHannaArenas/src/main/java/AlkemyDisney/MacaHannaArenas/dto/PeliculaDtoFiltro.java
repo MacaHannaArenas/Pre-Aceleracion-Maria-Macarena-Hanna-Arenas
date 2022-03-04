@@ -20,11 +20,11 @@ public class PeliculaDtoFiltro {
     private String lanzamiento;
     //dto basico
     private Float valoracion;
-    //private List<PersonajeDTO> personajes;
+    private List<PersonajeDTO> personajes;
     //private String personaje;
-    private Set<String> personajes;
-    //private List<GeneroDTO> generos;
-    private Set<String> generos;
+//    private Set<String> personajes;
+    private List<GeneroDTO> generos;
+//    private Set<String> generos;
     //dto completo
     private String orden;
 

@@ -74,8 +74,8 @@ public class Pelicula {
             name = "peliculas_personajes",
             joinColumns = @JoinColumn(name = "pelicula_id"),
             inverseJoinColumns = @JoinColumn(name = "personaje_id"))
-    //private List<Personaje> personajes = new ArrayList<>();
-private Set<Personaje> personajes = new HashSet<>();
+    private List<Personaje> personajes = new ArrayList<>();
+//private Set<Personaje> personajes = new HashSet<>();
     
     @ManyToMany(cascade = {
         CascadeType.DETACH,
@@ -88,8 +88,8 @@ private Set<Personaje> personajes = new HashSet<>();
             name = "peliculas_generos",
             joinColumns = @JoinColumn(name = "pelicula_id"),
             inverseJoinColumns = @JoinColumn(name = "genero_id"))
-    //private List<Genero> generos = new ArrayList<>();
- private Set<Genero> generos = new HashSet<>();
+    private List<Genero> generos = new ArrayList<>();
+// private Set<Genero> generos = new HashSet<>();
     
 @Override
 	public boolean equals(Object obj) {

@@ -22,19 +22,11 @@ public class PeliculaEspe {
 
     public Specification<Pelicula> getFiltered(PeliculaDtoFiltro filtrosPelicula) {
 
-        // LAMBDA F(x)
         return (root, query, criteriaBuilder) -> {
 
             List<Predicate> filtros = new ArrayList<>();
-            /*
-            if (StringUtils.hasLength(filtrosPelicula.getTitulo())) {
-                filtros.add(
-                        criteriaBuilder.like(
-                                criteriaBuilder.lower(root.get("titulo")),
-                                "%" + filtrosPelicula.getTitulo().toLowerCase() + "%"
-                        )
-                );
-            }*/
+           
+          
             if (StringUtils.hasLength(filtrosPelicula.getTitulo())) {
                 filtros.add(
                         criteriaBuilder.like(
@@ -43,7 +35,7 @@ public class PeliculaEspe {
                         )
                 );
             }
-
+/*
             if (filtrosPelicula.getImagen() != null) {
                 filtros.add(
                         criteriaBuilder.like(
@@ -63,13 +55,12 @@ public class PeliculaEspe {
                         criteriaBuilder.equal(root.get("valoracion"), filtrosPelicula.getValoracion()));
             }
 
-            //REVISAR 
             if (!CollectionUtils.isEmpty(filtrosPelicula.getPersonajes())) {
                 Join<Pelicula, Personaje> join = root.join("personajes", JoinType.INNER);
                 Expression<String> personajeId = join.get("personajeId");
                 filtros.add(personajeId.in(filtrosPelicula.getPersonajes()));
             }
-
+*/
             if (!CollectionUtils.isEmpty(filtrosPelicula.getGeneros())) {
                 Join<Pelicula, Genero> join = root.join("pelicula_generos", JoinType.INNER);
                 Expression<String> generoId = join.get("generoId");
@@ -85,17 +76,7 @@ public class PeliculaEspe {
                     filtrosPelicula.isASC()
                     ? criteriaBuilder.asc(root.get(orderByField))
                     : criteriaBuilder.desc(root.get(orderByField)));
-            //query.distinct(true);
-
-
-            /*
-            String orderByField = "titulo";
-            query.orderBy(
-                    filtrosPelicula.isASC()
-                    ? criteriaBuilder.asc(root.get(orderByField))
-                    : criteriaBuilder.desc(root.get(orderByField))
-            );
-             */
+       
             return criteriaBuilder.and(filtros.toArray(new Predicate[0]));
         };
     }
